@@ -1,9 +1,10 @@
 import 
-    fetchNbaData
+    fetchNbaTeams
    from "./apiCalls";
 
   import mockData from ".././mockData/MockData";
   import nbaKey from "./../apiKey";
+import { SIGTRAP } from "constants";
   
   describe("apiCall", () => {
     describe("Fetch recent films", () => {
@@ -25,7 +26,7 @@ import
       });
   
       it("Should return an object if status code is ok", async () => {
-        await expect(fetchNbaData()).resolves.toEqual(mockData);
+        await expect(fetchNbaTeams()).resolves.toEqual(mockData);
       });
   
       it("Should throw an error if status code is not ok", async () => {
@@ -35,7 +36,7 @@ import
           })
         );
   
-        await expect(fetchNbaData()).rejects.toEqual("Failed to fetch data");
+        await expect(fetchNbaTeams()).rejects.toEqual("Failed to fetch data");
       });
     });
 });
