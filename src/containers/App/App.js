@@ -13,15 +13,31 @@ import AccountPage from '../../Components/AccountPage/AccountPage'
 
 import * as routes from '../../constants/routes'
 
+import { firebase } from '../../firebase/index'
+import { auth } from 'firebase';
 
 class App extends Component {
-  
+  constructor(props){
+    super(props)
+
+    this.state = {
+      authUser: null
+    };
+  }
+
+componentDidMount() {
+  firebase.auth.onAuthStateChanged(authUser => {
+    authUser
+      ? this.setState(() => ({authUser}))
+      : this.setState(() => ({authUser: null}));
+  });
+}
   
   
   render() {
     return (
       <div className="App">
-        <Navigation />
+        <Navigation  authUser={this.state.authUser}/>
         <hr/>
 
         <Route
