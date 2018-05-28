@@ -3,11 +3,13 @@ import { withRouter } from 'react-router-dom';
 import { SignUpLink } from '../SignUpPage/SignUpPage'
 import { auth } from '../../firebase/index'
 import * as routes from '../../constants/routes'
+import { PasswordForgetLink } from '../PasswordForget/PasswordForget'
 
 const SignInPage = ({ history }) =>
   <div>
     <h1>SignIn</h1>
     <SignInForm history={history} />
+    <PasswordForgetLink />
     <SignUpLink />
   </div>
 
