@@ -1,31 +1,45 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
 import LeagueContainer from '../LeagueContainer/LeagueContainer'
+import Navigation from '../../Components/Nav/Navigation'
+
+import * as routes from '../../constants/routes'
 
 class App extends Component {
   
   
-  // showNbaData = async () => {
-  //   try{
-  //     const nbaCall = await fetchNbaData()
-  //     const nbaData = await nbaCleaner(nbaCall)
-  //       console.log(nbaData)
-  //   }catch(error){
-
-  //   }
-  // }
   
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-        </header>
-        <p className="App-intro">
-          
-        </p>
-        <LeagueContainer />
-    
+        <Navigation />
+        <hr/>
+
+        <Route
+          exact path = {routes.LANDING}
+          component = {() => <LandingPage />}
+        />
+        <Route
+          exact path = {routes.SIGN_UP}
+          component = {() => <SignUpPage />}
+        />
+        <Route
+          exact path = {routes.SIGN_IN}
+          component = {() => <SignInPage />}
+        />
+        <Route
+          exact path = {routes.PASSWORD_FORGET}
+          component = {() => <PasswordForgetPage />}
+        />
+        <Route
+          exact path = {routes.HOME}
+          component = {() => <HomePage />}
+        />
+        <Route
+          exact path = {routes.ACCOUNT}
+          component = {() => <AccountPage />}
+        />
       </div>
     );
   }
