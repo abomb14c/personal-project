@@ -36,4 +36,4 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 
-export default connect(null, mapDispatchToProps) (NewLeague)
+export default connect(null, mapDispatchToProps)(NewLeague)
