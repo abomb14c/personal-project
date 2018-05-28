@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { 
+    Link,
+    withRouter
+ } from 'react-router-dom'
+
 import * as routes from '../../constants/routes'
 import { auth } from '../../firebase/index'
 
-const SignUpPage = () =>
+const SignUpPage = ({ history }) =>
   <div>
     <h1>SignUp</h1>
-    <SignUpForm />
+    <SignUpForm  history={ history }/>
   </div>
 
 const INITIAL_STATE = {
@@ -35,12 +39,17 @@ class SignUpForm extends Component {
             passwordOne
         } = this.state
 
+        const {
+            history,
+        } = this.props
+
         auth.doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
                 this.setState(() => ({...INITIAL_STATE}));
+                history.push(routes.HOME)
             })
             .catch(error => {
-                this.setState(byPropKey('error', error))
+                this.setState(byPropKey('error', error));
             })
         
         event.preventDefault();
@@ -103,7 +112,7 @@ const SignUpLink = () =>
     </p>
 
 
-export default SignUpPage;
+export default withRouter(SignUpPage);
 
 export {
     SignUpForm,
