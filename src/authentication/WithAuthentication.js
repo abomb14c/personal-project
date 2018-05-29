@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import AuthUserContext from '../AuthUserContext/AuthUserContext';
 import { firebase } from '../firebase';
