@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import AuthUserContext from '../../AuthUserContext/AuthUserContext';
 import { PasswordForgetForm } from '../PasswordForget/PasswordForget';
 import PasswordChangeForm from '../PasswordChange/PasswordChange';
 import withAuthorization from '../../WithAuthorization/WithAuthorization'
@@ -12,8 +11,6 @@ const AccountPage = ({ authUser }) =>
         <PasswordForgetForm />
         <PasswordChangeForm />
       </div>
-
-
 
 const mapStateToProps = (state) => ({
   authUser: state.sessionState.authUser,
