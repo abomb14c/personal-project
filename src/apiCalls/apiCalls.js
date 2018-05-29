@@ -13,5 +13,6 @@ const fetchNbaTeams = async () => {
         throw error;
     }
 }
+// get rid of try catch
 
 export default fetchNbaTeams
