@@ -1,20 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import AuthUserContext from '../../AuthUserContext/AuthUserContext';
 import { PasswordForgetForm } from '../PasswordForget/PasswordForget';
 import PasswordChangeForm from '../PasswordChange/PasswordChange';
 import withAuthorization from '../../WithAuthorization/WithAuthorization'
 
-const AccountPage = () =>
-  <AuthUserContext.Consumer>
-    {authUser =>
+const AccountPage = ({ authUser }) =>
       <div>
         <h1>Account: {authUser.email}</h1>
         <PasswordForgetForm />
         <PasswordChangeForm />
       </div>
-    }
-  </AuthUserContext.Consumer>
+
+
+
+const mapStateToProps = (state) => ({
+  authUser: state.sessionState.authUser,
+});
 
 const authCondition = (authUser) => !!authUser;
 
-export default withAuthorization(authCondition)(AccountPage);
+export default compose(
+  withAuthorization(authCondition),
+  connect(mapStateToProps)
+)(AccountPage);
