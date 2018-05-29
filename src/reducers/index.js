@@ -10,3 +10,6 @@ const rootReducer = combineReducers({
   });
   
   export default rootReducer;
+
+
+  // rename to nbaReducer
