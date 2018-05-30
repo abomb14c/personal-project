@@ -3,15 +3,20 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SignOutButton from '../Signout/SignOut'
 import * as routes from '../../constants/routes'
+import icon from "../../assets/league-leader-icon.png"
+import './nav.css'
 
 const Navigation = ({ authUser }) =>
-  <div>
+  <div className="nav-bar">
+    <div className="icon-div">
+      <img alt="app-icon" src={icon}></img>
+      <h1 className="title">League Leader</h1>
+    </div>
     { authUser
         ? <NavigationAuth />
         : <NavigationNonAuth />
     }
   </div>
- 
 
 const NavigationAuth = () =>
   <ul>
