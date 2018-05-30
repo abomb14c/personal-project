@@ -14,7 +14,7 @@ const SignInPage = ({ history }) =>
       <div className="password-reset">
         <PasswordForgetLink />
         <SignUpLink />
-      </div>
+      </div> 
     </div>
   </div>
 

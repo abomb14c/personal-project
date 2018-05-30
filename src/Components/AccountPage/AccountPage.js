@@ -6,11 +6,11 @@ import PasswordChangeForm from '../PasswordChange/PasswordChange';
 import withAuthorization from '../../WithAuthorization/WithAuthorization'
 
 const AccountPage = ({ authUser }) =>
-      <div>
-        <h1>Account: {authUser.email}</h1>
-        <PasswordForgetForm />
-        <PasswordChangeForm />
-      </div>
+  <div>
+    <h1>Account: {authUser.email}</h1>
+    <PasswordForgetForm />
+    <PasswordChangeForm />
+  </div>
 
 const mapStateToProps = (state) => ({
   authUser: state.sessionState.authUser,
