@@ -1,0 +1,37 @@
+input {
+    border:none;
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    margin-top: 10px;
+    width: 300px;
+    padding: 5px;
+}
+
+.create-account-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-account-container {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 3px solid #786a4f;
+    display:flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 500px;
+}
+
+.create-account-button {
+    background-color: #374050;
+    border: none;
+    color: #fff;
+    font-size: 21px;
+    height: 40px;
+    margin-top: 10px;
+    width: 300px;
+}

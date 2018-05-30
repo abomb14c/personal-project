@@ -6,11 +6,14 @@ import {
 
 import * as routes from '../../constants/routes'
 import { auth, db } from '../../firebase/index'
+import './signup.css'
 
 const SignUpPage = ({ history }) =>
-  <div>
-    <h1>SignUp</h1>
-    <SignUpForm  history={ history }/>
+  <div className="create-account-background">
+    <div className="create-account-container">
+        <h1>Create an Account</h1>
+        <SignUpForm  history={ history }/>
+    </div>
   </div>
 
 const INITIAL_STATE = {
@@ -101,7 +104,7 @@ class SignUpForm extends Component {
                     type="password"
                     placeholder="Confirm Password"
                 />
-                <button disabled={isInvalid} type="submit">Sign Up</button>
+                <button className="create-account-button" disabled={isInvalid} type="submit">Sign Up</button>
 
                 {error && <p>{error.message}</p>}   
             </form>
