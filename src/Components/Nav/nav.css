@@ -1,9 +1,5 @@
-ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
-    padding-right: 20px;
-    
+img {
+    height: 75px;
 }
 
 li {
@@ -17,13 +13,18 @@ li {
     background-color: #374050;
 }
 
-img {
-    height: 75px;
+ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding-right: 20px;
+    
+}
+
+.icon-div{
+    padding-top: 10px;
 }
 
 .title{
     color: #fff;
-}
-.icon-div{
-    padding-top: 10px;
 }

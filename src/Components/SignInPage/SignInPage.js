@@ -4,13 +4,18 @@ import { SignUpLink } from '../SignUpPage/SignUpPage'
 import { auth } from '../../firebase/index'
 import * as routes from '../../constants/routes'
 import { PasswordForgetLink } from '../PasswordForget/PasswordForget'
+import './signIn.css'
 
 const SignInPage = ({ history }) =>
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm history={history} />
-    <PasswordForgetLink />
-    <SignUpLink />
+  <div className="background">
+    <div className="sign-in-container">
+      <h1 className="sign-in">Sign In</h1>
+      <SignInForm history={history} />
+      <div className="password-reset">
+        <PasswordForgetLink />
+        <SignUpLink />
+      </div>
+    </div>
   </div>
 
   const byPropKey = (propertyName, value) => () => ({
@@ -63,20 +68,22 @@ const SignInPage = ({ history }) =>
         email === "";
 
       return (
-        <form onSubmit={this.onSubmit}>
+        <form className="login-form" onSubmit={this.onSubmit}>
           <input
+            className="login-input login-input-one"
             value={email}
             onChange={event => this.setState(byPropKey('email', event.target.value))}
             type="text"
             placeholder="Email"
           />
           <input
+            className="login-input"
             value={password}
             onChange={event => this.setState(byPropKey('password', event.target.value))}
             type="password"
             placeholder="Password"
           />
-          <button disabled={isInvalid} type="submit">Sign In</button>
+          <button disabled={isInvalid} type="submit" className="sign-in-button">Sign In</button>
 
           { error && <p>(error.message)</p>}
         </form>

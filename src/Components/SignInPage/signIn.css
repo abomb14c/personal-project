@@ -1,0 +1,55 @@
+
+
+.background {
+    background-color: rgba(56, 64, 78, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 150px;
+    position: absolute;
+    width:100vw;
+    z-index: 9000;
+}
+
+.login-input {
+    border: none;
+    display: block;
+    height: 40px;
+    margin-top: 10px;
+    width: 300px;
+    padding: 5px;
+}
+
+.login-input-one {
+    margin-top:30px;
+}
+
+.password-reset {
+    margin-top: 10px;
+}
+
+.sign-in {
+    color: #fff;
+    font-size: 48px;
+}
+
+.sign-in-button {
+    background-color: #374050;
+    border: none;
+    color: #fff;
+    font-size: 21px;
+    height: 40px;
+    margin-top: 10px;
+    width: 300px;
+}
+
+.sign-in-container {
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    height: 40vh;
+    justify-content: center;
+    width: 50vw;
+}
+
