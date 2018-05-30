@@ -1,0 +1,29 @@
+ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding-right: 20px;
+    
+}
+
+li {
+    padding-right: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-bar {
+    height: 150px;
+    background-color: #374050;
+}
+
+img {
+    height: 75px;
+}
+
+.title{
+    color: #fff;
+}
+.icon-div{
+    padding-top: 10px;
+}
