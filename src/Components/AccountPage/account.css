@@ -1,0 +1,22 @@
+.account {
+    color:#786a4f;
+    margin-top:5px;
+}
+
+.account-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-container {
+    border: 3px solid #786a4f;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+    height: 300px;
+    width: 500px;
+}
+
+.account-name {
+    color: #333333;
+}
